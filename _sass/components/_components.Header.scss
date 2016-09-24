@@ -23,6 +23,12 @@
   }
 }
 
+.c-Header__fork {
+  position: absolute;
+  top: dp-spacing();
+  right: dp-spacing();
+}
+
 .c-Header__title {
   display: block;
 }
