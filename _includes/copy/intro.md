@@ -1,4 +1,4 @@
-# Monitor web performance over time.
+# Monitor website performance over time.
 
 [WebPageTest](https://webpagetest.org) is an incredibly useful resource for any web developer, but the information it provides becomes much more powerful when monitored regularly, rather than at isolated events. SpeedTracker runs on top of WebPageTest and makes period performance tests on your website and shows a visualisation of how the various performance metrics evolve over time.
 
