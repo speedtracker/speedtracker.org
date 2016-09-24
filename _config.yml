@@ -1,6 +1,6 @@
 # Site settings
 title: SpeedTracker
-description: Open-source website performance monitoring tool
+description: Website performance monitoring tool
 baseurl: ""
 url: "https://speedtracker.org"
 
