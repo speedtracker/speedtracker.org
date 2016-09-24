@@ -1,0 +1,60 @@
+.c-MarkdownText {
+  @include dp-wrapper-gutter(750px);
+
+  font-size: 1.11em;
+
+  h1 {
+    font-size: dp-size('larger');
+  }
+
+  h2 {
+    font-size: dp-size('large');
+  }
+
+  * + h1 {
+    margin-top: 80px;
+  }
+
+  * + h2 {
+    margin-top: 60px;
+  }
+
+  a {
+    color: dp-color('accent');
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      
+    }
+  }
+
+  .highlight {
+    background-color: dp-color('background-shade-1');
+    margin: 40px 0;
+    overflow: scroll;
+    padding: 20px;
+  }
+
+  code {
+    background-color: dp-color('background-shade-1');
+    font-size: 0.9em;
+    padding: 1px 4px 3px 4px;
+  }
+
+  table {
+    margin: dp-spacing('larger') 0;
+
+    th,
+    td {
+      border: 1px solid dp-color('background-shade-1');
+      padding: 10px;
+    }
+
+    tr {
+      &:nth-of-type(2n) {
+        background-color: #f4f4f4;     
+      }
+    }
+  }
+}

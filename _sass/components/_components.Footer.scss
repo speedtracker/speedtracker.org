@@ -1,0 +1,14 @@
+.c-Footer {
+  font-size: dp-size('small');
+  padding: 30px;
+  text-align: center;
+
+  a {
+    color: dp-color('accent');
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

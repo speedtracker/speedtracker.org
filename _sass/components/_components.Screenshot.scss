@@ -1,0 +1,9 @@
+.c-Screenshot {
+  @include dp-wrapper-gutter(1045px);
+  
+  text-align: center;
+}
+
+.c-Screenshot--narrow {
+  @include dp-wrapper-gutter(500px);
+}

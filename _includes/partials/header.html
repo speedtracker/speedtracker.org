@@ -1,0 +1,30 @@
+<header class="c-Header{% if page.url == '/' %} c-Header--extended{% endif %}">
+  {% if page.url != '/' %}
+    <a class="c-Header__back" href="/">← Back</a>
+  {% endif %}
+  
+  {% if page.url == '/' %}
+    <a href="/">
+      {% include partials/logo.html width=200 %}
+      <br>
+      {% include partials/logoTitle.html class="c-Header__title" width=240 %}
+    </a>
+
+    <p class="c-Header__subtitle">Open-source website monitoring platform</p>
+
+    <div class="c-Header__links">
+      <a href="#" class="c-Header__link c-Button">View Demo</a>
+      <a href="/docs" class="c-Header__link c-Button">Get started</a>
+    </div>
+
+    {% include partials/waves.html extended=true %}
+  {% else %}
+    <a href="/">
+      {% include partials/logo.html width=100 %}
+      <h1 class="c-Header__page-title">{{ page.title }}</h1>
+    </a>
+
+    {% include partials/waves.html %}
+  {% endif %}
+
+</header>

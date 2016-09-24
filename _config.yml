@@ -1,0 +1,14 @@
+# Site settings
+title: SpeedTracker
+description: Open-source website performance monitoring tool
+baseurl: ""
+url: "https://speedtracker.org"
+
+# Build settings
+markdown: kramdown
+
+toolkitUrl: "https://speedtracker-toolkit-zqghxyqsts.now.sh"
+
+detach:  false
+port:    4830
+host:    0.0.0.0

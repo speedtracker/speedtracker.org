@@ -1,0 +1,19 @@
+.c-Section {
+  padding-top: 50px;
+  position: relative;
+  overflow: hidden;
+  
+  & + & {
+    box-shadow: 2px -12px 63px -21px rgba(0,0,0,0.75);  
+  }
+}
+
+.c-Section--tint {
+  background-color: dp-color('background-shade-1');
+
+}
+
+.c-Section__cta {
+  padding-bottom: 50px;
+  text-align: center;
+}

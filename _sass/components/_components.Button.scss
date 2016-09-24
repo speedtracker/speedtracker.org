@@ -1,0 +1,27 @@
+.c-Button {
+  border: 2px solid dp-color('secondary');
+  color: dp-color('secondary');
+  cursor: pointer;
+  display: inline-block;
+  font-size: dp-size('small');
+  font-weight: bold;
+  padding: 14px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    background-color: dp-color('secondary');
+    color: dp-color('accent');
+  }
+}
+
+.c-Button--accent {
+  border-color: dp-color('accent');
+  background-color: dp-color('accent');
+  color: dp-color('secondary');
+
+  &:hover {
+    background-color: transparent;
+    color: dp-color('accent');
+  }
+}

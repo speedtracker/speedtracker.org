@@ -1,0 +1,39 @@
+---
+layout: base
+---
+
+<section class="c-Section">
+  <div class="c-MarkdownText">
+    {% capture section %}{% include copy/intro.md %}{% endcapture %}
+    {{ section | markdownify }}
+  </div>
+
+  <div class="c-Screenshot">
+    <img class="c-Screenshot__image" src="/assets/images/screenshot1.png" style="margin-bottom: -20%">
+  </div>
+</section>
+
+<section class="c-Section c-Section--tint u-padding-bottom-larger">
+  <div class="c-MarkdownText">
+    {% capture section %}{% include copy/infrastructure.md %}{% endcapture %}
+    {{ section | markdownify }}
+  </div>
+</section>
+
+<section class="c-Section">
+  <div class="c-MarkdownText">
+    {% capture section %}{% include copy/budgets.md %}{% endcapture %}
+    {{ section | markdownify }}
+  </div>
+
+  <div class="c-Screenshot c-Screenshot--narrow">
+    <img class="c-Screenshot__image" src="/assets/images/screenshot2.png" style="margin-bottom: -100%">
+  </div>  
+</section>
+
+<section class="c-Section c-Section--tint">
+  <div class="c-Section__cta">
+    <p>Do you want to give it a go?</p><br>
+    <a href="/docs" class="c-Button c-Button--accent">Get started</a>
+  </div>
+</section>

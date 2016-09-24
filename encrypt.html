@@ -1,0 +1,28 @@
+---
+layout: base
+title: Encryption tool
+---
+
+<div class="u-wrapper-gutter">
+  <div class="u-cols">
+    <div class="u-col u-col--1-1 u-col--1-2@medium">
+      <form method="POST" action="{{ site.toolkitUrl }}" name="toolkitEncrypt">
+        <div class="u-margin-bottom-larger">
+          <input type="text" name="key" class="c-TextField" placeholder="Key">
+        </div>
+        <div class="u-margin-bottom-larger">
+          <input type="text" name="text" class="c-TextField" placeholder="Text">
+        </div>
+        <div class="u-margin-bottom-larger">
+          <input type="submit" class="c-Button c-Button--accent" value="Encrypt"></form>
+        </div>
+      </form>
+    </div>
+    <div class="u-col u-col--1-1 u-col--1-2@medium">
+      <p style="word-wrap: break-word" class="js-encrypted-text u-size-large">Your encrypted text will show here.</p>    
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="/assets/js/main.js"></script>
