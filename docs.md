@@ -39,7 +39,7 @@ SpeedTracker must have push access to your newly-created GitHub repository. To a
 
 To do this, go to the **Settings** pane on your repository, navigate to **Collaborators** and add the user **speedtracker-bot**. At this point, the invitation you just sent is still pending, so you need to prod the bot for it to accept your request. 
 
-Use the [connect tool](/connect) for this, **or** open the following link in your browser, replacing the placeholders with your GitHub username or organisation, the name of the repository and the name of the branch you installed the Jekyll site on (typically *master* or *gh-pages*):
+Use the [connect tool](/connect) for this. Alternatively, open the following link in your browser, replacing the placeholders with your GitHub username or organisation, the name of the repository and the name of the branch you installed the Jekyll site on (typically *master* or *gh-pages*):
 
 ```
 https://api.speedtracker.org/v1/connect/{USERNAME}/{REPOSITORY}/{BRANCH}
