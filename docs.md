@@ -103,6 +103,8 @@ Recurring tests can be set by defining an `interval` property within each profil
 
 You can choose to cancel these at any time by removing the `interval` property from the profile.
 
+**Please note:** This feature is still under development. If your scheduled tests stop firing, you might need to request one manually so that it triggers the scheduled ones again.
+
 <h2 id="alerts">4.3. Alerts</h2>
 
 If you define [performance budgets](#budgets), you can choose to receive alerts when any of the metrics goes above its budget. Currently, notifications can be delivered via e-mail or Slack messages.
