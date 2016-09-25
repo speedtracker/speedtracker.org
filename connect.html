@@ -1,0 +1,31 @@
+---
+layout: base
+title: Connect to repository
+---
+
+<div class="u-wrapper-gutter">
+  <div class="u-cols">
+    <div class="u-col u-col--1-1 u-col--1-2@medium">
+      <form method="POST" action="https://api.speedtracker.org/v1/connect" name="connect">
+        <div class="u-margin-bottom-larger">
+          <input type="text" name="username" class="c-TextField" placeholder="Username/organisation">
+        </div>
+        <div class="u-margin-bottom-larger">
+          <input type="text" name="repository" class="c-TextField" placeholder="Repository">
+        </div>
+        <div class="u-margin-bottom-larger">
+          <input type="text" name="branch" class="c-TextField" placeholder="Branch (e.g. gh-pages)">
+        </div>
+        <div class="u-margin-bottom-larger">
+          <input type="submit" class="c-Button c-Button--accent" value="Connect"></form>
+        </div>
+      </form>
+    </div>
+    <div class="u-col u-col--1-1 u-col--1-2@medium">
+      <p style="word-wrap: break-word" class="js-connect-result u-size-large">Enter the details for your GitHub repository.</p>    
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="/assets/js/main.js"></script>
