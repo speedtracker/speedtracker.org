@@ -23,6 +23,29 @@
   }
 }
 
+.c-Header__nav {
+  margin-top: dp-spacing('larger');
+
+  @include media('>=medium') {
+    position: absolute;
+    top: dp-spacing();
+    left: dp-spacing();
+    margin-top: 0;    
+  }
+}
+
+.c-Header__nav-item {
+  border: 1px solid transparent;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 10px;
+  transition: border-color 0.3s ease-out;
+
+  &:hover {
+    border-color: dp-color('secondary');
+  }
+}
+
 .c-Header__external-links {
   display: none;
   position: absolute;

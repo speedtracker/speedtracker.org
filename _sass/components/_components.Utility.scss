@@ -1,0 +1,15 @@
+.c-Utility {
+  
+}
+
+.c-Utility__console {
+  background-color: dp-color('background-shade-1');
+  font-family: Monospace, "Lucida Console", Monaco, monospace;
+  height: 300px;
+  overflow: scroll;
+  padding: dp-spacing();
+
+  p + p {
+    margin-top: 10px;
+  }
+}

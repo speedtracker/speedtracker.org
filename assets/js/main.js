@@ -1,41 +1,78 @@
 var SpeedTracker = (function ($) {
+  var $console = $('.js-console');
+
+  function writeToConsole(message) {
+    $console.append('<p>' + message + '</p>');
+
+    // Auto-scroll
+    $console.scrollTop($console[0].scrollHeight);
+  }
+
+  function resolvePlaceholders(subject, dictionary) {
+    var matches = subject.match(/{(.*?)}/g)
+
+    if (!matches) return subject
+
+    matches.forEach(function (match) {
+      var escapedMatch = match.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+      var property = match.slice(1, -1)
+
+      subject = subject.replace(new RegExp(escapedMatch, 'g'), dictionary[property])
+    })
+
+    return subject
+  }
+
+  function getFormData(form) {
+    var serialisedArray = $(form).serializeArray();
+    var payload = {}
+
+    serialisedArray.forEach(function (field) {
+      payload[field.name] = field.value;
+    })
+
+    return payload;
+  }
+
   function bindEvents() {
-    $('form[name="toolkitEncrypt"]').submit(function () {
-      var $target = $('.js-encrypted-text');
-      var baseUrl = $(this).attr('action');
-      var key = $(this).find('[name="key"]').val();
-      var text = $(this).find('[name="text"]').val();
+    $('.js-form').submit(function () {
+      var data = getFormData(this);
+      var url = resolvePlaceholders($(this).attr('action'), data);
+      var method = $(this).attr('method') || 'GET';
 
-      var url = baseUrl + '/encrypt/' + key + '/' + encodeURIComponent(text);
+      var ajaxOptions = {
+        method: method,
+        url: url
+      };
 
-      $target.text('Encrypting...');
+      if (method === 'POST') {
+        ajaxOptions.data = data;
+      }
 
-      $.get(url, function (data) {
-        $target.text(data);
-      });
+      writeToConsole('Hang on...');
+
+      $.ajax(ajaxOptions).done(function (response) {
+        writeToConsole('--> ' + response);
+      }).fail(function (error) {
+        var errorMessage = 'Unknown';
+
+        if (error.responseText) {
+          try {
+            var parsedError = JSON.parse(error.responseText);
+
+            if (parsedError.code) {
+              errorMessage = parsedError.code
+            }
+          } catch (e) {
+            errorMessage = error.responseText
+          }
+        }
+
+        writeToConsole('(!) Error: "' + errorMessage + '"');
+      })
 
       return false;
-    })
-
-    $('form[name="connect"]').submit(function () {
-      var $target = $('.js-connect-result');
-      var baseUrl = $(this).attr('action');
-
-      var username = $(this).find('[name="username"]').val();
-      var repository = $(this).find('[name="repository"]').val();
-
-      var url = baseUrl + '/' + username + '/' + repository
-
-      $target.text('Hang on...');
-
-      $.get(url, function (data) {
-        $target.text(data);
-      }).fail(function () {
-        $target.html('Oops, something went wrong. Did you invite <strong>speedtracker-bot</strong> to your repository?');
-      });
-
-      return false;
-    })
+    });
   }
 
   $(document).init(function () {

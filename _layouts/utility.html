@@ -1,0 +1,35 @@
+---
+layout: base
+---
+{% assign url = page.action %}
+
+{% if page.prependToolkitUrl %}
+  {% assign url = url | prepend: site.toolkitUrl %}
+{% endif %}
+
+<div class="u-wrapper-gutter">
+  <div class="u-cols">
+    <div class="u-col u-col--1-1 u-col--1-2@medium u-padding">
+      <form method="{{ page.method }}" class="js-form" action="{{ url }}" name="toolkitEncrypt">
+        {% for field in page.fields %}
+          <div class="u-margin-bottom-larger">
+            <label class="c-TextField c-TextField--expand">{{ field.label }}
+              <input type="text" name="{{ field.key }}" placeholder="{{ field.placeholder }}">
+            </label>
+          </div>
+          {% endfor %}
+
+        <div class="u-margin-bottom-larger">
+          <input type="submit" class="c-Button c-Button--accent" value="{{ page.ctaText | default: 'Submit' }}"></form>
+        </div>
+      </form>
+    </div>
+    <div class="u-col u-col--1-1 u-col--1-2@medium u-padding">
+      <div class="c-Utility__console js-console">
+        {% for message in page.consoleMessages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,25 +1,16 @@
 ---
-layout: base
+layout: utility
 title: Encryption tool
+fields:
+  - key: "key"
+    label: "Key"
+    placeholder: "foobar123"
+  - key: "text"
+    label: "Text"
+    placeholder: "joe.bloggs@email.com"
+method: "GET"
+action: "/encrypt/{key}/{text}"
+prependToolkitUrl: true
+consoleMessages: ["Type your key and the text to be encrypted."]
+ctaText: "Encrypt"
 ---
-
-<div class="u-wrapper-gutter">
-  <div class="u-cols">
-    <div class="u-col u-col--1-1 u-col--1-2@medium">
-      <form method="POST" action="{{ site.toolkitUrl }}" name="toolkitEncrypt">
-        <div class="u-margin-bottom-larger">
-          <input type="text" name="key" class="c-TextField" placeholder="Key">
-        </div>
-        <div class="u-margin-bottom-larger">
-          <input type="text" name="text" class="c-TextField" placeholder="Text">
-        </div>
-        <div class="u-margin-bottom-larger">
-          <input type="submit" class="c-Button c-Button--accent" value="Encrypt"></form>
-        </div>
-      </form>
-    </div>
-    <div class="u-col u-col--1-1 u-col--1-2@medium">
-      <p style="word-wrap: break-word" class="js-encrypted-text u-size-large">Your encrypted text will show here.</p>    
-    </div>
-  </div>
-</div>

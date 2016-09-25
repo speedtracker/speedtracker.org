@@ -1,0 +1,24 @@
+---
+layout: utility
+title: Run test
+fields:
+  - key: "username"
+    label: "GitHub username"
+    placeholder: "joebloggs"
+  - key: "repository"
+    label: "GitHub repository"
+    placeholder: "joebloggs-speedtracker"
+  - key: "branch"
+    label: "GitHub branch"
+    placeholder: "gh-pages"
+  - key: "profile"
+    label: "Profile id"
+    placeholder: "mysite-3g"
+  - key: "key"
+    label: "Encryption key"
+    placeholder: "foobar123"
+method: "GET"
+consoleMessages: ["Enter the details for the test."]
+ctaText: "Run test"
+action: "https://api.speedtracker.org/v1/test/{username}/{repository}/{branch}/{profile}?key={key}"
+---
