@@ -4,7 +4,11 @@
   font-size: 1.11em;
 
   h1 {
-    font-size: dp-size('larger');
+    font-size: 32px;
+
+    @include media('>=medium') {
+      font-size: dp-size('larger');  
+    }
   }
 
   h2 {

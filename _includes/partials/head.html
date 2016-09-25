@@ -12,7 +12,7 @@
   <title>{{ pageTitle }}</title>
   <meta name="description" content="{{ site.description }}">
 
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="/css/main.css?v={{ site.github.build_revision }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
   <meta property="og:image" content="{{ site.url }}/assets/images/logo-full-wide.png"/>
