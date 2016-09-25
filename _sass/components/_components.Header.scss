@@ -23,10 +23,15 @@
   }
 }
 
-.c-Header__fork {
+.c-Header__external-links {
+  display: none;
   position: absolute;
   top: dp-spacing();
   right: dp-spacing();
+
+  @include media('>=medium') {
+    display: block;
+  }
 }
 
 .c-Header__title {
