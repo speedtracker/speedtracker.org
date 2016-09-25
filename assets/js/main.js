@@ -23,9 +23,8 @@ var SpeedTracker = (function ($) {
 
       var username = $(this).find('[name="username"]').val();
       var repository = $(this).find('[name="repository"]').val();
-      var branch = $(this).find('[name="branch"]').val();
 
-      var url = baseUrl + '/' + username + '/' + repository + '/' + branch
+      var url = baseUrl + '/' + username + '/' + repository
 
       $target.text('Hang on...');
 
