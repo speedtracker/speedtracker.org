@@ -5,11 +5,7 @@ title: Documentation
 <ul class="c-Index">
   <li class="c-Index__item"><a href="#introduction">1. Introduction</a></li>
   <li class="c-Index__item"><a href="#prerequisites">2. Prerequisites</a></li>
-  <li class="c-Index__item"><a href="#installation">3. Installation</a>
-    <ul class="c-Index__nested">
-      <li class="c-Index__item"><a href="#permissions">3.1. Permissions</a></li>
-    </ul>
-  </li>
+  <li class="c-Index__item"><a href="#installation">3. Installation</a></li>
   <li class="c-Index__item"><a href="#configuration">4. Configuration</a>
     <ul class="c-Index__nested">
       <li class="c-Index__item"><a href="#profiles">4.1. Profiles</a></li>
@@ -39,19 +35,11 @@ Each key comes with a limit of 200 page loads per day, as explained on the link 
 
 The first step is to set up a copy of the visualisation layer. To do this, fork the repository at [speedtracker/speedtracker-frontend](https://github.com/speedtracker/speedtracker-frontend) into your own GitHub account or organisation.
 
-SpeedTracker will read from a number of files in your repository, namely `speedtracker.yml`, the main config file. But before you start editing it, you need to set up an encryption key.
+SpeedTracker must have push access to your newly-created GitHub repository. To avoid asking you for a Personal Access Token, which would grant us push access to all your repositories, you can simply give push access to our [friendly bot](https://github.com/speedtracker-bot) on just the repository you created.
 
-This key will need to be supplied as a URL parameter to every request made to the API, as it's used to ensure all requests are coming from you, as well as to obfuscate critical information that will be left visible to the public eye (unless your repository is private).
+To do this, go to the **Settings** pane on your repository, navigate to **Collaborators** and add the user **speedtracker-bot**. At this point, the invitation you just sent is still pending, so you need to prod the bot for it to accept your request. 
 
-Choose a strong and long string as your key and store it somewhere safe. [This tool](https://lastpass.com/generatepassword.php) might help you generate one.
-
-<h2 id="permissions">3.1. Permissions</h2>
-
-SpeedTracker must have push access to your newly-created GitHub repository. To avoid asking you for a Personal Access Token, which would grant us push access to all your repositories, you can simply give push access to our [friendly bot](https://github.com/speedtracker-bot) on a single repository.
-
-To do this, go to the **Settings** pane on your repository, navigate to **Collaborators** and add the user **speedtracker-bot**. At this point, the invitation will be pending, so you need to nudge the bot for it to accept your request.
-
-Just open the following link in your browser, replacing the placeholders with your GitHub username or organisation, the name of the repository and the name of the branch you installed the Jekyll site on (typically *master* or *gh-pages*):
+Use the [connect tool](/connect) for this, **or** open the following link in your browser, replacing the placeholders with your GitHub username or organisation, the name of the repository and the name of the branch you installed the Jekyll site on (typically *master* or *gh-pages*):
 
 ```
 https://api.speedtracker.org/v1/connect/{USERNAME}/{REPOSITORY}/{BRANCH}
@@ -59,7 +47,13 @@ https://api.speedtracker.org/v1/connect/{USERNAME}/{REPOSITORY}/{BRANCH}
 
 <h1 id="configuration">4. Configuration</h1>
 
-To install your key, you need to create an encrypted version of it. [This tool](/encrypt) allows you to encrypt any piece of text with a key of your choice. Start by encrypting the key itself (so if your key is `foobar123`, encrypt that with `foobar123`) and set that as the value of `encryptionKey` in your `speedtracker.yml` file.
+SpeedTracker will read from a number of files in your repository, namely `speedtracker.yml`, the main config file. Since this file will be available for anyone to see (unless your repository is private), we need to protect some of the sensitive information it contains, such as your WebPageTest API key or e-mail address.
+
+To do this, you need to create a key/password that you will use to encrypt any sensitive information. When you make a request to the SpeedTracker API, you'll need to provide this password as URL parameter. The API will use this to decrypt information as well as to identify you.
+
+The [SpeedTracker encryption tool](/encrypt) is a small utility to encrypt any given text with a key of your choice. After you come up with a safe password for your site, you can use this tool to encrypt anything with it.
+
+The first thing to encrypt is the key itself, for the `encryptionKey` parameter in the config. So if your key is `foobar123`, use that in both the *Text* and *Key* fields and you'll get `0a5f0c0670219dc049`. If you want to then encrypt your email address, use *joe.bloggs@email.com* as the *Text* and `foobar123` as the key and so on.
 
 The table below shows what each configuration parameter is for, and whether or not its contents must be encrypted.
 
