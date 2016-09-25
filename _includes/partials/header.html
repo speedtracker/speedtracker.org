@@ -6,11 +6,9 @@
   {% endif %}
   
   {% if page.url == '/' %}
-    <a href="/">
-      {% include partials/logo.html width=200 %}
-      <br>
-      {% include partials/logoTitle.html class="c-Header__title" width=240 %}
-    </a>
+    {% include partials/logo.html width=200 %}
+    <br>
+    {% include partials/logoTitle.html class="c-Header__title" width=240 %}
 
     <p class="c-Header__subtitle">{{ site.description }}</p>
 
