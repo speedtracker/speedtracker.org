@@ -1,10 +1,14 @@
 <header class="c-Header{% if page.url == '/' %} c-Header--extended{% endif %}">
-  {% if page.url != '/' %}
-    <div class="c-Header__nav">
+  <div class="c-Header__nav">
+    {% if page.url != '/' %}
       <a class="c-NavLink" href="/">← Back</a>
-    </div>
-  {% endif %}
-  
+    {% endif %}
+    
+    <a class="c-NavLink" href="/test">Run test</a>
+    <a class="c-NavLink" href="/encrypt">Encrypt</a>
+    <a class="c-NavLink" href="/connect">Connect</a>
+  </div>
+
   {% if page.url == '/' %}
     {% include partials/logo.html width=200 %}
     <br>
@@ -15,12 +19,6 @@
     <div class="c-Header__links">
       <a href="https://demo.speedtracker.org" class="c-Header__link c-Button">View Demo</a>
       <a href="/docs" class="c-Header__link c-Button">Documentation</a>
-    </div>
-
-    <div class="c-Header__nav">
-      <a class="c-NavLink" href="/test">Run test</a>
-      <a class="c-NavLink" href="/encrypt">Encrypt</a>
-      <a class="c-NavLink" href="/connect">Connect</a>
     </div>
 
     <div class="c-Header__external-links">

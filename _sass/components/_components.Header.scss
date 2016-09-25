@@ -11,13 +11,15 @@
 }
 
 .c-Header__nav {
-  margin-top: dp-spacing('larger');
+  margin-top: dp-spacing('large') * -1;
+  margin-bottom: dp-spacing('larger');
 
   @include media('>=medium') {
     position: absolute;
     top: dp-spacing();
     left: dp-spacing();
-    margin-top: 0;    
+    margin-top: 0;
+    margin-bottom: 0;    
   }
 }
 
