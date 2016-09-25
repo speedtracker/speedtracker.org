@@ -8,6 +8,8 @@
   padding: 14px;
   text-transform: uppercase;
   transition: all 0.2s ease-out;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
 
   &:hover {
     background-color: dp-color('secondary');
