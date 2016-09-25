@@ -14,7 +14,7 @@ layout: base
         {% for field in page.fields %}
           <div class="u-margin-bottom-larger">
             <label class="c-TextField c-TextField--expand">{{ field.label }}
-              <input type="text" name="{{ field.key }}" placeholder="{{ field.placeholder }}">
+              <input type="{{ field.type | default: 'text' }}" name="{{ field.key }}" placeholder="{{ field.placeholder }}">
             </label>
           </div>
           {% endfor %}
