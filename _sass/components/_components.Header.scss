@@ -10,19 +10,6 @@
   padding-bottom: 15%;
 }
 
-.c-Header__back {
-  border: 1px solid transparent;
-  padding: 10px;
-  position: absolute;
-  top: dp-spacing();
-  left: dp-spacing();
-  transition: border-color 0.3s ease-out;
-
-  &:hover {
-    border-color: dp-color('secondary');
-  }
-}
-
 .c-Header__nav {
   margin-top: dp-spacing('larger');
 
@@ -31,18 +18,6 @@
     top: dp-spacing();
     left: dp-spacing();
     margin-top: 0;    
-  }
-}
-
-.c-Header__nav-item {
-  border: 1px solid transparent;
-  font-size: 13px;
-  text-transform: uppercase;
-  padding: 10px;
-  transition: border-color 0.3s ease-out;
-
-  &:hover {
-    border-color: dp-color('secondary');
   }
 }
 

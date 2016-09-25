@@ -1,0 +1,11 @@
+.c-NavLink {
+  border: 1px solid transparent;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 10px;
+  transition: border-color 0.3s ease-out;
+
+  &:hover {
+    border-color: dp-color('secondary');
+  }
+}
