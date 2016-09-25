@@ -162,8 +162,12 @@ budgets:
 
 <h1 id="run">5. Run a test</h1>
 
-With everything configured we can finally run a test! Just fire a `GET` or `POST` request to the following URL, replacing the placeholders with your GitHub username or organisation, the name of the repository, the branch, the id of the profile and the encryption key, respectively.
+With everything configured we can finally run a test! [This page](/test) has a simple UI that allows you to request a test.
+
+Alternatively, just fire a `GET` or `POST` request to the following URL, replacing the placeholders with your GitHub username or organisation, the name of the repository, the branch, the id of the profile and the encryption key, respectively.
 
 ```
 https://api.speedtracker.org/v1/test/{USERNAME}/{REPOSITORY}/{BRANCH}/{PROFILE}?key={KEY}
 ```
+
+You can use this URL to request tests programatically. For example, you can use it as a post-commit webhook on GitHub, so that your website is tested every time you make a deployment.
