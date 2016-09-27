@@ -61,4 +61,9 @@
       }
     }
   }
+
+  img {
+    display: block;
+    margin: dp-spacing('larger') auto 0 auto;
+  }
 }

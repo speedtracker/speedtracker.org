@@ -45,6 +45,10 @@ Use the [connect tool](/connect) for this. Alternatively, open the following lin
 https://api.speedtracker.org/v1/connect/{USERNAME}/{REPOSITORY}/{BRANCH}
 ```
 
+Finally, you need to enable GitHub Pages for your repository. Go to **Settings** and scroll down to the **GitHub Pages** section. From there, select which branch you want to serve your site from. From this section, you can also set up a custom domain.
+
+![Screenshot showing how to enable GitHub Pages](/assets/images/screenshot-github-pages.png)
+
 <h1 id="configuration">4. Configuration</h1>
 
 SpeedTracker will read from a number of files in your repository, namely `speedtracker.yml`, the main config file. Since this file will be available for anyone to see (unless your repository is private), we need to protect some of the sensitive information it contains, such as your WebPageTest API key or e-mail address.
