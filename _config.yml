@@ -7,7 +7,7 @@ url: "https://speedtracker.org"
 # Build settings
 markdown: kramdown
 
-toolkitUrl: "https://speedtracker-toolkit-zqghxyqsts.now.sh"
+toolkitUrl: "https://speedtracker-toolkit-wunjwvrnzb.now.sh"
 
 detach:  false
 port:    4830

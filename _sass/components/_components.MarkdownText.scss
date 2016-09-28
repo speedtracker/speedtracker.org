@@ -62,6 +62,34 @@
     }
   }
 
+  ol {
+    counter-reset: item;
+    margin-top: dp-spacing('large');
+    margin-left: 0;
+
+    li {
+      position: relative;
+      margin-bottom: dp-spacing('large');
+
+      &:before {
+        content: counter(item) " ";
+        counter-increment: item;
+        width: 1.8em;
+        height: 1.8em;
+        line-height: 1.3em;
+        background-color: dp-color('accent');
+        border-radius: 50%;
+        float: left;
+        text-align: center;
+        font-size: 0.8em;
+        font-weight: bold;
+        color: dp-color('secondary');
+        padding: 4px;
+        margin-right: 10px;
+      }
+    }
+  }
+
   img {
     display: block;
     margin: dp-spacing('larger') auto 0 auto;

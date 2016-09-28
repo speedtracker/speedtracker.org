@@ -1,11 +1,11 @@
 var SpeedTracker = (function ($) {
-  var $console = $('.js-console');
+  var $console = $('.js-console')
 
   function writeToConsole(message) {
-    $console.append('<p>' + message + '</p>');
+    $console.append('<p>' + message + '</p>')
 
     // Auto-scroll
-    $console.scrollTop($console[0].scrollHeight);
+    $console.scrollTop($console[0].scrollHeight)
   }
 
   function resolvePlaceholders(subject, dictionary) {
@@ -14,7 +14,7 @@ var SpeedTracker = (function ($) {
     if (!matches) return subject
 
     matches.forEach(function (match) {
-      var escapedMatch = match.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+      var escapedMatch = match.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&")
       var property = match.slice(1, -1)
 
       subject = subject.replace(new RegExp(escapedMatch, 'g'), dictionary[property])
@@ -24,41 +24,41 @@ var SpeedTracker = (function ($) {
   }
 
   function getFormData(form) {
-    var serialisedArray = $(form).serializeArray();
+    var serialisedArray = $(form).serializeArray()
     var payload = {}
 
     serialisedArray.forEach(function (field) {
-      payload[field.name] = field.value;
+      payload[field.name] = field.value
     })
 
-    return payload;
+    return payload
   }
 
   function bindEvents() {
     $('.js-form').submit(function () {
-      var data = getFormData(this);
-      var url = resolvePlaceholders($(this).attr('action'), data);
-      var method = $(this).attr('method') || 'GET';
+      var data = getFormData(this)
+      var url = resolvePlaceholders($(this).attr('action'), data)
+      var method = $(this).attr('method') || 'GET'
 
       var ajaxOptions = {
         method: method,
         url: url
-      };
-
-      if (method === 'POST') {
-        ajaxOptions.data = data;
       }
 
-      writeToConsole('Hang on...');
+      if (method === 'POST') {
+        ajaxOptions.data = data
+      }
+
+      writeToConsole('Hang on...')
 
       $.ajax(ajaxOptions).done(function (response) {
-        writeToConsole('--> ' + response);
+        writeToConsole('--> ' + response)
       }).fail(function (error) {
-        var errorMessage = 'Unknown';
+        var errorMessage = 'Unknown'
 
         if (error.responseText) {
           try {
-            var parsedError = JSON.parse(error.responseText);
+            var parsedError = JSON.parse(error.responseText)
 
             if (parsedError.code) {
               errorMessage = parsedError.code
@@ -68,14 +68,14 @@ var SpeedTracker = (function ($) {
           }
         }
 
-        writeToConsole('(!) Error: "' + errorMessage + '"');
+        writeToConsole('(!) Error: "' + errorMessage + '"')
       })
 
-      return false;
-    });
+      return false
+    })
   }
 
   $(document).init(function () {
-    bindEvents();
+    bindEvents()
   })
-})(jQuery);
+})(jQuery)

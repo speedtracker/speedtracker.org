@@ -2,22 +2,37 @@
 layout: markdown
 title: Documentation
 ---
-<ul class="c-Index">
-  <li class="c-Index__item"><a href="#introduction">1. Introduction</a></li>
-  <li class="c-Index__item"><a href="#prerequisites">2. Prerequisites</a></li>
-  <li class="c-Index__item"><a href="#installation">3. Installation</a></li>
-  <li class="c-Index__item"><a href="#configuration">4. Configuration</a>
+
+<h1 id="quick-start">Quick start</h1>
+
+1. [Click here](https://www.webpagetest.org/getkey.php) to request a WebPageTest API key.
+1. Fork the [SpeedTracker repository](https://github.com/speedtracker/speedtracker) into your own GitHub account or organisation.
+1. Enable GitHub Pages for the repository under *Settings* > *Options* > *GitHub Pages*. Select the branch you want to serve your site from (typically **master**).
+1. Add **speedtracker-bot** as a collaborator on your repository (under *Settings* > *Collaborators*).
+1. Use the [connect tool](/connect) to establish a connection between SpeedTracker and your repository.
+1. Using the GitHub UI (or after cloning the repository to your machine), edit the main configuration file (`speedtracker.yml`).
+1. Edit `_profiles/default.html` to define your first profile.
+1. Use the [test tool](/test) to run a test.
+1. Wait a few minutes for the test to be completed and the results to be uploaded to your repository.
+1. Profit.
+
+<!--ul class="c-Index">
+  <li class="c-Index__item"><a href="#quick-start">Quick start</a></li>
+  <li class="c-Index__item"><a href="#introduction">Introduction</a></li>
+  <li class="c-Index__item"><a href="#prerequisites">Prerequisites</a></li>
+  <li class="c-Index__item"><a href="#installation">Installation</a></li>
+  <li class="c-Index__item"><a href="#configuration">Configuration</a>
     <ul class="c-Index__nested">
-      <li class="c-Index__item"><a href="#profiles">4.1. Profiles</a></li>
-      <li class="c-Index__item"><a href="#scheduling-tests">4.2. Scheduling tests</a></li>
-      <li class="c-Index__item"><a href="#alerts">4.3. Alerts</a></li>
-      <li class="c-Index__item"><a href="#budgets">4.4. Budgets</a></li>
+      <li class="c-Index__item"><a href="#profiles">Profiles</a></li>
+      <li class="c-Index__item"><a href="#scheduling-tests">Scheduling tests</a></li>
+      <li class="c-Index__item"><a href="#alerts">Alerts</a></li>
+      <li class="c-Index__item"><a href="#budgets">Budgets</a></li>
     </ul>
   </li>
-  <li class="c-Index__item"><a href="#run">5. Run a test</a></li>
-</ul>
+  <li class="c-Index__item"><a href="#run">Run a test</a></li>
+</ul-->
 
-<h1 id="introduction">1. Introduction</h1>
+<h1 id="introduction">Introduction</h1>
 
 SpeedTracker consists of two separate components: an API layer and a visualisation layer. The former is a Node.js application that processes test requests and handles all communication between you, WebPageTest and GitHub. The latter is a [Jekyll](http://jekyllrb.com/) running a small React application.
 
@@ -25,13 +40,13 @@ Both these pieces are available as open-source projects, which you can run on yo
 
 If you wish to run the API yourself, please refer to the documentation on the [GitHub repository](https://github.com/speedtracker/speedtracker-app).
 
-<h1 id="prerequisites">2. Prerequisites</h1>
+<h1 id="prerequisites">Prerequisites</h1>
 
 SpeedTracker is built on top of WebPageTest. If you don't have access to a private WebPageTest instance, you can use the public one, for which you will need to [request an API key](https://www.webpagetest.org/getkey.php). SpeedTracker will use this key to request tests on your behalf.
 
 Each key comes with a limit of 200 page loads per day, as explained on the link above. You will be subject to the WebPageTest terms of service.
 
-<h1 id="installation">3. Installation</h1>
+<h1 id="installation">Installation</h1>
 
 The first step is to set up a copy of the visualisation layer. To do this, fork the repository at [speedtracker/speedtracker-frontend](https://github.com/speedtracker/speedtracker-frontend) into your own GitHub account or organisation.
 
@@ -49,7 +64,7 @@ Finally, you need to enable GitHub Pages for your repository. Go to **Settings**
 
 ![Screenshot showing how to enable GitHub Pages](/assets/images/screenshot-github-pages.png)
 
-<h1 id="configuration">4. Configuration</h1>
+<h1 id="configuration">Configuration</h1>
 
 SpeedTracker will read from a number of files in your repository, namely `speedtracker.yml`, the main config file. Since this file will be available for anyone to see (unless your repository is private), we need to protect some of the sensitive information it contains, such as your WebPageTest API key or e-mail address.
 
@@ -67,7 +82,7 @@ The table below shows what each configuration parameter is for, and whether or n
 | `wptKey` | WebPageTest API key | Yes |
 | `alerts` | Channels for performance budget alerts to be delivered on (see [alerts](#alerts)) | Partially |
 
-<h2 id="profiles">4.1. Profiles</h2>
+<h2 id="profiles">Profiles</h2>
 
 Every test runs against a profile, which consists of a pre-defined group of parameters, such as the website URL and other parameters used by WebPageTest, such as connectivity type, location or number of runs.
 
@@ -101,7 +116,7 @@ parameters:
 ---
 ```
 
-<h2 id="scheduling-tests">4.2. Scheduling tests</h2>
+<h2 id="scheduling-tests">Scheduling tests</h2>
 
 Recurring tests can be set by defining an `interval` property within each profile. We currently allow 2 scheduled tests per day, so the minimum value for `interval` is `12`.
 
@@ -109,7 +124,7 @@ You can choose to cancel these at any time by removing the `interval` property f
 
 **Please note:** This feature is still under development. If your scheduled tests stop firing, you might need to request one manually so that it triggers the scheduled ones again.
 
-<h2 id="alerts">4.3. Alerts</h2>
+<h2 id="alerts">Alerts</h2>
 
 If you define [performance budgets](#budgets), you can choose to receive alerts when any of the metrics goes above its budget. Currently, notifications can be delivered via e-mail or Slack messages.
 
@@ -139,7 +154,7 @@ alerts:
     iconEmoji: ':grimacing:'
 ```
 
-<h2 id="budgets">4.4. Budgets</h2>
+<h2 id="budgets">Budgets</h2>
 
 Performance budgets are defined per-profile, within the profile configuration file, and can monitor any metric used by SpeedTracker. A budget is defined with the following parameters.
 
@@ -164,7 +179,7 @@ budgets:
     alerts: ['slackAlert']
 ```
 
-<h1 id="run">5. Run a test</h1>
+<h1 id="run">Run a test</h1>
 
 With everything configured, we can finally request a test. You can use the UI on [https://speedtracker.org/test](https://speedtracker.org/test), or alternatively fire a `GET` or `POST` request to the following URL, replacing the placeholders with your GitHub username or organisation, the name of the repository, the branch, the id of the profile and the encryption key, respectively.
 
