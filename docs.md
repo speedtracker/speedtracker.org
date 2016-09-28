@@ -10,11 +10,14 @@ title: Documentation
 1. Enable GitHub Pages for the repository under *Settings* > *Options* > *GitHub Pages*. Select the branch you want to serve your site from (typically **master**).
 1. Add **speedtracker-bot** as a collaborator on your repository (under *Settings* > *Collaborators*).
 1. Use the [connect tool](/connect) to establish a connection between SpeedTracker and your repository.
-1. Using the GitHub UI (or after cloning the repository to your machine), edit the main configuration file (`speedtracker.yml`).
+1. Edit the main configuration file (`speedtracker.yml`).
 1. Edit `_profiles/default.html` to define your first profile.
+1. Commit and push the changed files.
 1. Use the [test tool](/test) to run a test.
-1. Wait a few minutes for the test to be completed and the results to be uploaded to your repository.
-1. Profit.
+
+It will take a few minutes for the test to be executed and for the results to be uploaded to your repository. After that, go to your GitHub Pages URL to see the results.
+
+Read on for a more detailed view of the steps above, including how to customise your new SpeedTracker dashboard.
 
 <!--ul class="c-Index">
   <li class="c-Index__item"><a href="#quick-start">Quick start</a></li>

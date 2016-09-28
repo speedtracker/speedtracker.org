@@ -65,6 +65,7 @@
   ol {
     counter-reset: item;
     margin-top: dp-spacing('large');
+    margin-bottom: dp-spacing('larger');
     margin-left: 0;
 
     li {
