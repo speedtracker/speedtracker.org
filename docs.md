@@ -60,7 +60,7 @@ To do this, go to the **Settings** pane on your repository, navigate to **Collab
 Use the [connect tool](/connect) for this. Alternatively, open the following link in your browser, replacing the placeholders with your GitHub username or organisation, the name of the repository and the name of the branch you installed the Jekyll site on (typically *master* or *gh-pages*):
 
 ```
-https://api.speedtracker.org/v1/connect/{USERNAME}/{REPOSITORY}/{BRANCH}
+https://api.speedtracker.org/v1/connect/{USERNAME}/{REPOSITORY}
 ```
 
 Finally, you need to enable GitHub Pages for your repository. Go to **Settings** and scroll down to the **GitHub Pages** section. From there, select which branch you want to serve your site from. From this section, you can also set up a custom domain.
