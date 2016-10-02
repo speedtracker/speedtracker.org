@@ -41,7 +41,7 @@ SpeedTracker consists of two separate components: an API layer and a visualisati
 
 Both these pieces are available as open-source projects, which you can run on your own infrastructure. However, this guide will document the use case of using our hosted API layer, publicly available for anyone to use for free, and hosting the visualisation component on a GitHub repository, served via GitHub Pages.
 
-If you wish to run the API yourself, please refer to the documentation on the [GitHub repository](https://github.com/speedtracker/speedtracker-app).
+If you wish to run the API yourself, please refer to the documentation on the [GitHub repository](https://github.com/speedtracker/speedtracker-api).
 
 <h1 id="prerequisites">Prerequisites</h1>
 
@@ -51,7 +51,7 @@ Each key comes with a limit of 200 page loads per day, as explained on the link 
 
 <h1 id="installation">Installation</h1>
 
-The first step is to set up a copy of the visualisation layer. To do this, fork the repository at [speedtracker/speedtracker-frontend](https://github.com/speedtracker/speedtracker-frontend) into your own GitHub account or organisation.
+The first step is to set up a copy of the visualisation layer. To do this, fork the [SpeedTracker repository](https://github.com/speedtracker/speedtracker-frontend) into your own GitHub account or organisation.
 
 SpeedTracker must have push access to your newly-created GitHub repository. To avoid asking you for a Personal Access Token, which would grant us push access to all your repositories, you can simply give push access to our [friendly bot](https://github.com/speedtracker-bot) on just the repository you created.
 
