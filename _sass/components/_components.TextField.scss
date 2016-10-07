@@ -24,6 +24,22 @@
       border-color: dp-color('primary');
     }
   }
+
+  ::-webkit-input-placeholder {
+     color: #aaa;
+  }
+
+  :-moz-placeholder {
+     color: #aaa;  
+  }
+
+  ::-moz-placeholder {
+     color: #aaa;  
+  }
+
+  :-ms-input-placeholder {  
+     color: #aaa;  
+  }  
 }
 
 .c-TextField--expand {
@@ -33,3 +49,4 @@
     width: 100%;
   }
 }
+

@@ -7,19 +7,19 @@ fields:
     placeholder: "joebloggs"
   - key: "repository"
     label: "GitHub repository"
-    placeholder: "joebloggs-speedtracker"
+    placeholder: "speedtracker"
   - key: "branch"
     label: "GitHub branch"
-    placeholder: "gh-pages"
+    placeholder: "master"
   - key: "profile"
     label: "Profile id"
-    placeholder: "mysite-3g"
+    placeholder: "default"
   - key: "key"
     label: "Encryption key"
     placeholder: "foobar123"
     type: "password"
 method: "GET"
-consoleMessages: ["Enter the details for the test."]
+consoleMessages: ["Enter the details for the test. You need to supply the raw, original key, not the encrypted version from the config file."]
 ctaText: "Run test"
 action: "https://api.speedtracker.org/v1/test/{username}/{repository}/{branch}/{profile}?key={key}"
 ---
