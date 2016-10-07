@@ -17,10 +17,13 @@ title: Documentation
 
 It will take a few minutes for the test to be executed and for the results to be uploaded to your repository. After that, go to your GitHub Pages URL to see the results.
 
-Read on for a more detailed view of the steps above, including how to customise your new SpeedTracker dashboard.
+<h1 id="screencast">Screencast</h1>
 
-<!--ul class="c-Index">
-  <li class="c-Index__item"><a href="#quick-start">Quick start</a></li>
+{% include partials/video.html url="https://player.vimeo.com/video/185952137?title=0&byline=0&portrait=0" width="640" height="360"%}
+
+<h1 id="table-of-contents">Table of contents</h1>
+
+<ul class="c-Index">
   <li class="c-Index__item"><a href="#introduction">Introduction</a></li>
   <li class="c-Index__item"><a href="#prerequisites">Prerequisites</a></li>
   <li class="c-Index__item"><a href="#installation">Installation</a></li>
@@ -33,7 +36,7 @@ Read on for a more detailed view of the steps above, including how to customise 
     </ul>
   </li>
   <li class="c-Index__item"><a href="#run">Run a test</a></li>
-</ul-->
+</ul>
 
 <h1 id="introduction">Introduction</h1>
 
