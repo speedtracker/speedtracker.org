@@ -17,7 +17,7 @@ var SpeedTracker = (function ($) {
       var escapedMatch = match.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&")
       var property = match.slice(1, -1)
 
-      subject = subject.replace(new RegExp(escapedMatch, 'g'), dictionary[property])
+      subject = subject.replace(new RegExp(escapedMatch, 'g'), encodeURIComponent(dictionary[property]))
     })
 
     return subject
