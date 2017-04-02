@@ -1,0 +1,34 @@
+.c-Post {
+  @include dp-wrapper-gutter(750px);
+}
+
+.c-Post + .c-Post {
+  border-top: 1px solid dp-color('background-shade-1');
+}
+
+.c-Post__body {
+  @include c-MarkdownText;
+}
+
+.c-Post__nav-back {
+  display: inline-block;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin: 10px 0;
+  padding: 10px 0;
+  transition: border-color 0.3s ease-out;
+}
+
+.c-Post__title {
+  margin-bottom: 0;
+  font-size: dp-size('larger');
+}
+
+.c-Post__meta {
+  color: dp-color('background-shade-2');
+  font-size: dp-size('small');
+}
+
+.c-Post__cta {
+  margin-top: dp-spacing('larger');
+}

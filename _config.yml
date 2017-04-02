@@ -12,3 +12,12 @@ toolkitUrl: "https://api.speedtracker.org"
 detach:  false
 port:    4830
 host:    0.0.0.0
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /blog/:title/
