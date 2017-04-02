@@ -1,0 +1,18 @@
+---
+layout: base
+title: Blog
+---
+<div class="u-wrapper-gutter">
+  <article class="c-Post">
+    <a class="c-Post__nav-back" href="/blog/">← Back</a>
+
+    <a href="{{ post.url }}">
+      <h2 class="c-Post__title">{{ page.title | escape }}</h2>
+    </a>
+    <p class="c-Post__meta">{{ page.date | date: "%b %-d, %Y" }}</p>
+
+    <div class="c-Post__body">
+      {{ page.content }}
+    </div>
+  </article>
+</div>

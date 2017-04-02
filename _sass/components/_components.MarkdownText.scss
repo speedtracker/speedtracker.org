@@ -1,6 +1,4 @@
-.c-MarkdownText {
-  @include dp-wrapper-gutter(750px);
-
+@mixin c-MarkdownText {
   font-size: 1.11em;
 
   h1 {
@@ -62,11 +60,14 @@
     }
   }
 
-  ol {
-    counter-reset: item;
+  ol, ul {
     margin-top: dp-spacing('large');
     margin-bottom: dp-spacing('larger');
     margin-left: 0;
+  }
+
+  ol {
+    counter-reset: item;
 
     li {
       position: relative;
@@ -99,4 +100,9 @@
   .c-Video {
     margin: dp-spacing('larger') auto 0 auto; 
   }
+}
+
+.c-MarkdownText {
+  @include dp-wrapper-gutter(750px);
+  @include c-MarkdownText;
 }

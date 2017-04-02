@@ -1,0 +1,21 @@
+---
+layout: base
+title: Blog
+permalink: /blog/
+---
+<div class="u-wrapper-gutter">
+  {% for post in site.posts %}
+    <article class="c-Post">
+      <a href="{{ post.url }}">
+        <h2 class="c-Post__title">{{ post.title | escape }}</h2>
+      </a>
+      <p class="c-Post__meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+
+      <div>{{ post.excerpt }}</div>
+
+      <div class="c-Post__cta">
+        <a href="{{ post.url }}" class="c-Button c-Button--accent">Read more</a>
+      </div>
+    </article>  
+  {% endfor %}
+</div>
