@@ -15,6 +15,5 @@ For example:
 parameters:
   runs: 1
   url: "https://speedtracker.org"
-  browser: "Chrome"
-  location: "Dulles_Linux"
+  location: "Dulles_Linux:Chrome"
 ```
