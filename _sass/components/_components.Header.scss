@@ -19,7 +19,8 @@
     top: dp-spacing();
     left: dp-spacing();
     margin-top: 0;
-    margin-bottom: 0;    
+    margin-bottom: 0;
+    z-index: 1000;
   }
 }
 
