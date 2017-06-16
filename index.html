@@ -17,23 +17,28 @@ layout: base
   <div class="c-MarkdownText">
     {% capture section %}{% include copy/infrastructure.md %}{% endcapture %}
     {{ section | markdownify }}
-  </div>
-</section>
 
-<section class="c-Section">
-  <div class="c-MarkdownText">
     {% capture section %}{% include copy/budgets.md %}{% endcapture %}
     {{ section | markdownify }}
   </div>
 
   <div class="c-Screenshot c-Screenshot--narrow">
     <img class="c-Screenshot__image" src="/assets/images/screenshot2.png" style="margin-bottom: -100%; margin-top: 20px">
-  </div>  
+  </div>
 </section>
 
-<section class="c-Section c-Section--tint">
-  <div class="c-Section__cta">
+<section class="c-Section">
+  <div class="c-Companies">
+    <p>Helping these organisations (and <a href="#">others</a>) keep an eye on web performance:</p>
+
+    <div class="c-Companies__logos">
+      <a href="https://20minutes.github.io/speedtracker/">
+        <img class="c-Companies__logo" src="/assets/images/logos/20minutes.png">
+      </a>
+    </div>
+  </div>
+  <!--div class="c-Section__cta">
     <p>Do you want to give it a go?</p><br>
     <a href="/docs" class="c-Button c-Button--accent">Get started</a>
-  </div>
+  </div-->
 </section>

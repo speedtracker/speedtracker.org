@@ -1,0 +1,20 @@
+.c-Companies {
+  text-align: center;
+}
+
+.c-Companies a {
+  text-decoration: underline;
+}
+
+.c-Companies__logos {
+  margin-top: 40px;
+}
+
+.c-Companies__logo {
+  height: 100px;
+  transition: opacity 0.3s ease-out;
+}
+
+.c-Companies__logo:hover {
+  opacity: 0.6;
+}
