@@ -3,17 +3,19 @@
   position: relative;
   overflow: hidden;
   
-  & + & {
+  & + &:not(.c-Section--no-shadow) {
     box-shadow: 2px -12px 63px -21px rgba(0,0,0,0.75);  
   }
 }
 
+.c-Section--tight {
+  padding-top: 25px;
+}
+
 .c-Section--tint {
   background-color: dp-color('background-shade-1');
-
 }
 
 .c-Section__cta {
-  padding-bottom: 50px;
   text-align: center;
 }
