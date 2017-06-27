@@ -6,6 +6,14 @@
 
 ---
 
+## Development
+
+The website use [Jekyll](https://jekyllrb.com/) and to running locally at `http://localhost:4830`, run:
+
+```
+jekyll serve
+```
+
 ## License
 
 This project is licensed under the MIT license:
